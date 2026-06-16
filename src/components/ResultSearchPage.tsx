@@ -94,9 +94,9 @@ const ResultSearchPage = ({ onBack, onSubmit }: ResultSearchPageProps) => {
             className="bg-card rounded-2xl card-shadow p-8 mb-8"
           >
             <div className="flex flex-col items-center mb-8">
-              <div className="w-24 h-24 bg-muted rounded-full p-3 mb-4 flex items-center justify-center">
+              <div className="w-24 h-24 bg-muted rounded-full  mb-4 flex items-center justify-center overflow-hidden">
                 <img
-                  src="https://upload.wikimedia.org/wikipedia/en/thumb/b/b5/RGPV_logo.png/220px-RGPV_logo.png"
+                  src="https://image-static.collegedunia.com/public/college_data/images/logos/1747909661Screenshot20250522at3.53.05PM.png?h=71.7&w=71.7&mode=stretch"
                   alt="RGPV Logo"
                   className="w-full h-full object-contain"
                 />

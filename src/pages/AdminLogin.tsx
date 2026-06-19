@@ -52,7 +52,10 @@ const AdminLogin = () => {
     setIsSubmitting(false);
 
     if (error) {
-      if (error.message.includes("Invalid login credentials") || error.message.includes("invalid_credentials")) {
+      if (
+        error.message.includes("Invalid login credentials") ||
+        error.message.includes("invalid_credentials")
+      ) {
         toast.error("Invalid email or password. Please try again.");
       } else if (error.message.includes("Email not confirmed")) {
         toast.error("Please confirm your email before logging in.");
@@ -136,7 +139,9 @@ const AdminLogin = () => {
                   className={`h-12 text-base ${emailError ? "border-destructive focus-visible:ring-destructive" : ""}`}
                   autoComplete="email"
                 />
-                {emailError && <p className="text-xs text-destructive">{emailError}</p>}
+                {emailError && (
+                  <p className="text-xs text-destructive">{emailError}</p>
+                )}
               </div>
 
               <div className="space-y-2">
@@ -160,12 +165,28 @@ const AdminLogin = () => {
                     onClick={() => setShowPassword((v) => !v)}
                     className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground transition-colors"
                     tabIndex={-1}
-                    aria-label={showPassword ? "Hide password" : "Show password"}
+                    aria-label={
+                      showPassword ? "Hide password" : "Show password"
+                    }
                   >
-                    {showPassword ? <EyeOff className="w-5 h-5" /> : <Eye className="w-5 h-5" />}
+                    {showPassword ? (
+                      <EyeOff className="w-5 h-5" />
+                    ) : (
+                      <Eye className="w-5 h-5" />
+                    )}
                   </button>
                 </div>
-                {passwordError && <p className="text-xs text-destructive">{passwordError}</p>}
+                {passwordError && (
+                  <p className="text-xs text-destructive">{passwordError}</p>
+                )}
+                <div className="text-right">
+                  <Link
+                    to="/admin/forgot-password"
+                    className="text-sm text-primary hover:underline"
+                  >
+                    Forgot Password?
+                  </Link>
+                </div>
               </div>
 
               <Button
@@ -187,7 +208,10 @@ const AdminLogin = () => {
 
               <p className="text-center text-sm text-muted-foreground">
                 No account?{" "}
-                <Link to="/admin/signup" className="text-primary font-medium hover:underline">
+                <Link
+                  to="/admin/signup"
+                  className="text-primary font-medium hover:underline"
+                >
                   Create one
                 </Link>
               </p>
